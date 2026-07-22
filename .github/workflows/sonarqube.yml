@@ -1,5 +1,3 @@
-name: SonarQube Analysis
-
 on:
   push:
     branches:
@@ -32,6 +30,7 @@ jobs:
         shell: pwsh
         run: |
           $url = "${{ vars.SONAR_HOST_URL }}/api/system/status"
+          Write-Host "Connecting to: $url"
           $response = Invoke-RestMethod -Uri $url
           Write-Host "SonarQube status: $($response.status)"
 
