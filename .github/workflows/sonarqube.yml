@@ -29,11 +29,11 @@ jobs:
           fetch-depth: 0
 
       - name: Verify SonarQube is reachable
-        shell: powershell
+        shell: pwsh
         run: |
-          $response = Invoke-RestMethod `
-            -Uri "${{ vars.SONAR_HOST_URL }}/api/system/status"
-
+          $url = "${{ vars.SONAR_HOST_URL }}/api/system/status"
+          Write-Host "Connecting to: $url"
+          $response = Invoke-RestMethod -Uri $url
           Write-Host "SonarQube status: $($response.status)"
 
           if ($response.status -ne "UP") {
