@@ -1,0 +1,10 @@
+{
+  "name": "ict2216-lab9-sample",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independent JavaScript sample project for ICT2216 Lab 9",
+  "scripts": {
+    "start": "node src/app.js"
+  }
+}
+
